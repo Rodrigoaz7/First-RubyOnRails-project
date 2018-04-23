@@ -1,0 +1,32 @@
+<%= form_with(model: casa, local: true) do |form| %>
+  <% if casa.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(casa.errors.count, "error") %> prohibited this casa from being saved:</h2>
+
+      <ul>
+      <% casa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome, id: :casa_nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipo %>
+    <%= form.text_field :tipo, id: :casa_tipo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :endereco %>
+    <%= form.text_field :endereco, id: :casa_endereco %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

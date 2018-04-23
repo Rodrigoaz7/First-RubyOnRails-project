@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome:</strong>
+  <%= @casa.nome %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @casa.tipo %>
+</p>
+
+<p>
+  <strong>Endereco:</strong>
+  <%= @casa.endereco %>
+</p>
+
+<%= link_to 'Edit', edit_casa_path(@casa) %> |
+<%= link_to 'Back', casas_path %>

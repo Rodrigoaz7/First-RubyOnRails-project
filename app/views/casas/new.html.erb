@@ -1,0 +1,33 @@
+
+<h1 class="lead">Cadastre sua casa de show</h1>
+<!-- Esta tag cria um formulario automaticamente para mim -->
+<%= form_for @casa do |f| %>
+<!-- 		Nome <input type="text" name="banda[nome]" class="form-control">
+	Preço <input type="number" name="banda[preco]" step="100" class="form-control">
+	Facebook <input type="text" name="banda[facebook]" class="form-control">
+	Instagram <input type="text" name="banda[instagram]" class="form-control">
+	<br>
+	<button type="submit">Enviar</button> -->
+	<div class="form-group">
+		<%= f.label :nome %>
+		<%= f.text_field :nome, class:"form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :endereco %>
+		<%= f.text_field :endereco, class:"form-control"%>
+	</div>
+	<div class="form-group">
+		<%= f.label :tipo %>
+		<%= f.text_field :tipo, class:"form-control"%>
+	</div>
+	<br>
+	<%= f.submit "Criar", class:"btn btn-default btn-primary" %>
+<% end %>
+
+<br>
+
+<% @casa.errors.full_messages.each do |message| %>
+	<div class="alert alert-danger">
+		<%= message %>
+	</div>
+<% end %>

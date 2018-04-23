@@ -1,0 +1,14 @@
+<h1 class="lead">Bandas filtradas</h1>
+<table class="table table-hover table-bordered">
+	<tr>
+		<th>Nome</th>
+		<th>Preço</th>
+		<th>Facebook</th>
+		<th>Instagram</th>
+	</tr>
+	<tbody>
+		<%= render partial: "banda", collection: @bandas %>
+	</tbody>
+</table>
+
+	<%= link_to "Adicionar nova banda", bandas_cadastrar_path %>

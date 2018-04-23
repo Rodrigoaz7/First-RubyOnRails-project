@@ -1,0 +1,38 @@
+
+<h1 class="lead">Editar banda</h1>
+<!-- Esta tag cria um formulario automaticamente para mim -->
+
+<h1 class="lead">Cadastre suas bandas</h1>
+<!-- Esta tag cria um formulario automaticamente para mim -->
+<%= form_for @banda do |f| %>
+	<div class="form-group">
+		<%= f.label :nome %>
+		<%= f.text_field :nome, class:"form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :preco %>
+		<%= f.number_field :preco, step:1000, class:"form-control"%>
+	</div>
+	<div class="form-group">
+		<%= f.label :facebook %>
+		<%= f.text_field :facebook, class:"form-control"%>
+	</div>
+	<div class="form-group">
+		<%= f.label :instagram %>
+		<%= f.text_field :instagram, class:"form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label "Casa de show" %>
+		<%= f.collection_select :casa_id, @all_casas, :id, :nome, {}, class:"form-control" %>
+	</div>
+	<br>
+	<%= f.submit "Atualizar", class:"btn btn-default btn-primary" %>
+<% end %>
+
+<br>
+
+<% @banda.errors.full_messages.each do |message| %>
+	<div class="alert alert-danger">
+		<%= message %>
+	</div>
+<% end %>

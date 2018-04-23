@@ -1,0 +1,14 @@
+
+<tr> 
+	<td><%= banda.nome %></td>
+	<td><%= banda.preco %></td>
+	<td><a href="<%= banda.facebook %>"><%= banda.facebook %></a></td>
+	<td><a href="<%= banda.instagram %>"><%= banda.instagram %></a></td>
+	<td>
+		<%= button_to "remover", banda, method: :delete, class: "btn btn-danger",
+	data: {confirm: "Deseja remover a banda #{banda.nome}?"} %>
+		<%= button_to "atualizar", editbanda_path(banda), method: :get, class: "btn btn-default" %>
+	</td>
+	<!-- <td><a href="/bandas/remover/<%= banda.id %>">Remover</a></td> -->
+</tr>
+
